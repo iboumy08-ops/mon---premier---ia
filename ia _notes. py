@@ -11,3 +11,20 @@ heures = float(input("Combien d'heures tu révises par semaine ? "))
 note = 5 + 1.5 * heures
 note = min(note, 20)
 print(f"Si tu révises {heures}h, tu auras environ {note:.1f}/20 !")
+
+# === IA SANS INTERNET – DONNÉES DANS LE CODE ===
+heures = [7, 4, 10, 2]      # ← tes données
+notes  = [15.5, 11.0, 18.0, 8.0]
+
+# Calcul simple : moyenne des gains
+gain_moyen = 0
+for i in range(len(heures)):
+    gain_moyen += (notes[i] - 5) / heures[i]
+gain_moyen /= len(heures)
+
+# Prédiction
+h = float(input("Combien d'heures tu révises ? "))
+note_predite = 5 + gain_moyen * h
+note_predite = min(note_predite, 20)
+
+print(f"IA locale prédit : {note_predite:.1f}/20")
