@@ -1,0 +1,13 @@
+print("Je m'appelle Ibrahima Sory Camara")
+
+print(2 + 2)
+
+nom = "Ibrahima Sory Camara"
+age = 20
+print("Bonjour", nom, "! Tu as", age, "ans.")
+
+# === TON PREMIER MODÈLE IA : PRÉDICTION DE NOTE ===
+heures = float(input("Combien d'heures tu révises par semaine ? "))
+note = 5 + 1.5 * heures
+note = min(note, 20)
+print(f"Si tu révises {heures}h, tu auras environ {note:.1f}/20 !")
