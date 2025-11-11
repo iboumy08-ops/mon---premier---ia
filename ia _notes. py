@@ -28,3 +28,30 @@ note_predite = 5 + gain_moyen * h
 note_predite = min(note_predite, 20)
 
 print(f"IA locale prédit : {note_predite:.1f}/20")
+
+# === IA EXAM COACH – NIVEAU 2 ===
+print("\n" + "="*40)
+print("IA QUI TE DIT SI TU VAS RÉUSSIR")
+print("="*40)
+
+revision = float(input("Heures révisées cette semaine : "))
+sommeil = float(input("Heures de sommeil par nuit : "))
+stress = input("Tu stresses ? (oui/non/un peu) : ").lower()
+
+# Calcul du score (sur 100)
+score = 0
+score += min(revision * 3, 50)      # max 50 pts
+score += min(sommeil * 5, 35)       # max 35 pts
+if stress == "non":
+    score += 15
+elif stress == "un peu":
+    score += 8
+# sinon 0
+
+print(f"\nScore : {score}/100")
+if score >= 70:
+    print("Tu vas RÉUSSIR ! Continue !")
+elif score >= 50:
+    print("C’est bien, mais révise + ou dors mieux.")
+else:
+    print("Attention ! Il faut plus de révision et de sommeil.")
