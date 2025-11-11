@@ -55,3 +55,18 @@ elif score >= 50:
     print("C’est bien, mais révise + ou dors mieux.")
 else:
     print("Attention ! Il faut plus de révision et de sommeil.")
+
+# === GRAPHIQUE DE TON SCORE ===
+import matplotlib.pyplot as plt
+
+# Ton score
+score = 59  # ← change avec ton vrai score
+
+# Graphique
+plt.figure(figsize=(6, 4))
+plt.bar(["Ton score"], [score], color='#00C853' if score >= 70 else '#FFC107' if score >= 50 else '#F44336')
+plt.ylim(0, 100)
+plt.title("IA Exam Coach – Ton score de réussite")
+plt.ylabel("Points / 100")
+plt.text(0, score + 5, f"{score}/100", ha='center', fontweight='bold')
+plt.show()
