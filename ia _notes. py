@@ -98,3 +98,38 @@ if mdp == "guinee2025":
     print("Accès autorisé !")
 else:
     print("Accès refusé.")
+
+# === SEMAINE 1 : BASES PYTHON ===
+print("SEMAINE 1 – EXERCICES")
+
+# 1. Variables + print
+nom = "Ibrahima"
+age = 18
+print("Je m'appelle", nom, "et j'ai", age, "ans")
+
+# 2. Input + calcul
+heures = float(input("Heures révisées ? "))
+note = 5 + 1.5 * heures
+print("Note prédite :", note)
+
+# 3. if/else
+if note >= 12:
+    print("Réussi !")
+else:
+    print("À revoir")
+
+# 4. Plusieurs conditions
+stress = input("Stress ? (oui/non) ")
+if stress == "non":
+    print("Bonus +2 !")
+    note += 2
+print("Note finale :", note)
+
+# 5. Mini-coach
+print("Conseil :", end=" ")
+if note >= 15:
+    print("Continue comme ça !")
+elif note >= 10:
+    print("Bien, mais dors plus.")
+else:
+    print("Réviser + dormir !")
