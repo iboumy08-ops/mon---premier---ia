@@ -70,3 +70,31 @@ plt.title("IA Exam Coach – Ton score de réussite")
 plt.ylabel("Points / 100")
 plt.text(0, score + 5, f"{score}/100", ha='center', fontweight='bold')
 plt.show()
+
+# === 5 EXERCICES RÉVISION – 15 MIN ===
+print("=== EXERCICE 1 : Salut + nom ===")
+nom = input("Ton nom ? ")
+print("Salut", nom, "!")
+
+print("\n=== EXERCICE 2 : Calcul simple ===")
+a = float(input("Nombre 1 ? "))
+b = float(input("Nombre 2 ? "))
+print("Somme =", a + b)
+
+print("\n=== EXERCICE 3 : Note sur 20 ===")
+note = float(input("Ta note ? "))
+if note >= 12:
+    print("Tu as réussi !")
+else:
+    print("Il faut réviser plus.")
+
+print("\n=== EXERCICE 4 : Âge en 2030 ===")
+age = int(input("Ton âge ? "))
+print("En 2030, tu auras", age + 5, "ans")
+
+print("\n=== EXERCICE 5 : Mot de passe ===")
+mdp = input("Mot de passe ? ")
+if mdp == "guinee2025":
+    print("Accès autorisé !")
+else:
+    print("Accès refusé.")
