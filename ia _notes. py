@@ -133,3 +133,102 @@ elif note >= 10:
     print("Bien, mais dors plus.")
 else:
     print("Réviser + dormir !")
+
+# === SEMAINE 1 : EXERCICES D'APPLICATION ===
+print("EXERCICES RÉELS – COMME UN DEV IA")
+
+# ————————————————————————
+# EXERCICE 1 : Calculateur de bourse d’études
+# ————————————————————————
+print("\n1. BOURSE D'ÉTUDES")
+note_math = float(input("Note en maths ? "))
+note_phys = float(input("Note en physique ? "))
+moyenne = (note_math + note_phys) / 2
+
+if moyenne >= 16:
+    bourse = 500000
+elif moyenne >= 14:
+    bourse = 300000
+elif moyenne >= 12:
+    bourse = 150000
+else:
+    bourse = 0
+
+print(f"→ Moyenne : {moyenne:.1f} → Bourse : {bourse} GNF")
+
+# ————————————————————————
+# EXERCICE 2 : Gestionnaire de mots de passe
+# ————————————————————————
+print("\n2. MOT DE PASSE SÉCURISÉ")
+mdp = input("Crée un mot de passe : ")
+longueur = len(mdp)
+force = 0
+
+if longueur >= 8:
+    force += 1
+if any(c.isupper() for c in mdp):
+    force += 1
+if any(c.islower() for c in mdp):
+    force += 1
+if any(c.isdigit() for c in mdp):
+    force += 1
+
+print(f"→ Force : {force}/4 → ", end="")
+if force == 4:
+    print("SÉCURISÉ")
+elif force >= 2:
+    print("MOYEN")
+else:
+    print("FAIBLE")
+
+# ————————————————————————
+# EXERCICE 3 : Convertisseur de température
+# ————————————————————————
+print("\n3. CONVERSION °C ↔ °F")
+temp = float(input("Température ? "))
+unite = input("Unité (C ou F) ? ").upper()
+
+if unite == "C":
+    f = temp * 9/5 + 32
+    print(f"{temp}°C = {f:.1f}°F")
+elif unite == "F":
+    c = (temp - 32) * 5/9
+    print(f"{temp}°F = {c:.1f}°C")
+else:
+    print("Unité inconnue")
+
+# ————————————————————————
+# EXERCICE 4 : Simulateur de prêt étudiant
+# ————————————————————————
+print("\n4. PRÊT ÉTUDIANT")
+montant = float(input("Montant demandé (GNF) ? "))
+revenu = float(input("Revenu familial mensuel ? "))
+
+if revenu >= 2000000:
+    taux = 5
+elif revenu >= 1000000:
+    taux = 8
+else:
+    taux = 12
+
+interet = montant * taux / 100
+print(f"→ Taux : {taux}% → Intérêt : {interet:,.0f} GNF")
+
+# ————————————————————————
+# EXERCICE 5 : IA Coach Révision (version pro)
+# ————————————————————————
+print("\n5. IA COACH RÉVISION")
+heures = float(input("Heures révisées aujourd'hui ? "))
+objectif = 6
+
+if heures >= objectif:
+    print("OBJECTIF ATTEINT !")
+    bonus = heures - objectif
+    print(f"Bonus : +{bonus}h → Tu gagnes en confiance !")
+else:
+    manque = objectif - heures
+    print(f"IL MANQUE {manque}h")
+    if manque <= 1:
+        print("Tu peux rattraper ce soir !")
+    else:
+        print("Planifie mieux demain.")
