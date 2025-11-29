@@ -232,3 +232,65 @@ else:
         print("Tu peux rattraper ce soir !")
     else:
         print("Planifie mieux demain.")
+
+# === SEMAINE 2 : BOUCLES + LISTES – APPLICATIONS RÉELLES ===
+print("SEMAINE 2 – DÉVELOPPEUR JUNIOR")
+
+# ————————————————————————
+# EXERCICE 1 : Gestion de classe (10 étudiants)
+# ————————————————————————
+print("\n1. GESTION DE CLASSE")
+notes = [12, 18, 15, 9, 19, 14, 17, 11, 20, 13]
+
+print("Toutes les notes :", notes)
+print("Nombre d'étudiants :", len(notes))
+
+moyenne_classe = sum(notes) / len(notes)
+print(f"Moyenne classe : {moyenne_classe:.2f}/20")
+
+# ————————————————————————
+# EXERCICE 2 : Top 3 + Redoublants
+# ————————————————————————
+print("\n2. CLASSEMENT")
+notes_triees = sorted(notes, reverse=True)
+print("Top 3 :", notes_triees[:3])
+
+print("Redoublants (<10) :", end=" ")
+for note in notes:
+    if note < 10:
+        print(note, end=" ")
+print()  # ligne vide
+
+# ————————————————————————
+# EXERCICE 3 : Suivi quotidien de révision
+# ————————————————————————
+print("\n3. SUIVI 7 JOURS")
+revisions = []
+
+for jour in range(1, 8):
+    h = float(input(f"Jour {jour} – heures révisées ? "))
+    revisions.append(h)
+
+total = sum(revisions)
+print(f"Total semaine : {total}h → {total/7:.1f}h/jour en moyenne")
+
+# ————————————————————————
+# EXERCICE 4 : Recherche du meilleur jour
+# ————————————————————————
+print("\n4. MEILLEUR JOUR")
+meilleur = max(revisions)
+jour_meilleur = revisions.index(meilleur) + 1
+print(f"Meilleur jour : Jour {jour_meilleur} → {meilleur}h")
+
+# ————————————————————————
+# EXERCICE 5 : IA Motivation (pro)
+# ————————————————————————
+print("\n5. IA MOTIVATION PRO")
+if total >= 40:
+    print("CHAMPION ! Tu es dans le top 1% des étudiants guinéens")
+elif total >= 30:
+    print("EXCELLENT ! Continue, tu vas tout déchirer")
+elif total >= 20:
+    print("C’EST BIEN ! Ajoute 1h/jour et tu passes pro")
+else:
+    print("ALERTE ! Plan d’urgence : 6h/jour minimum cette semaine")
