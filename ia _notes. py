@@ -294,3 +294,83 @@ elif total >= 20:
     print("C’EST BIEN ! Ajoute 1h/jour et tu passes pro")
 else:
     print("ALERTE ! Plan d’urgence : 6h/jour minimum cette semaine")
+
+# === SEMAINE 3 : FONCTIONS – APPLICATIONS PRO ===
+print("SEMAINE 3 – DÉVELOPPEUR INTERMÉDIAIRE")
+
+# ————————————————————————
+# FONCTION 1 : Calculateur de bourse (réutilisable)
+# ————————————————————————
+def calculer_bourse(note_math, note_phys):
+    moyenne = (note_math + note_phys) / 2
+    if moyenne >= 19:
+        return 2000000, "EXCELLENTE"
+    elif moyenne >= 17:
+        return 1500000, "TRÈS BIEN"
+    elif moyenne >= 12:
+        return 500000, "BIEN"
+    else:
+        return 250000, "INSUFFISANT"
+
+bourse, statut = calculer_bourse(17, 15)
+print(f"\n1. BOURSE → {bourse:,} GNF ({statut})")
+
+# ————————————————————————
+# FONCTION 2 : Force du mot de passe (version pro)
+# ————————————————————————
+def force_mdp(mdp):
+    score = 0
+    if len(mdp) >= 10: score += 2
+    elif len(mdp) >= 8: score += 1
+    if any(c.isupper() for c in mdp): score += 1
+    if any(c.islower() for c in mdp): score += 1
+    if any(c.isdigit() for c in mdp): score += 1
+    if any(c in "!@#$%^&*" for c in mdp): score += 1
+    return score
+
+print(f"\n2. FORCE MOT DE PASSE → {force_mdp('Sory0864!')}/6")
+
+# ————————————————————————
+# FONCTION 3 : Convertisseur universel température
+# ————————————————————————
+def convertir_temp(valeur, unite):
+    if unite.upper() == "C":
+        return valeur * 9/5 + 32, "F"
+    elif unite.upper() == "F":
+        return (valeur - 32) * 5/9, "C"
+
+f, u = convertir_temp(37, "C")
+print(f"\n3. 37°C → {f:.1f}°{u}")
+
+# ————————————————————————
+# FONCTION 4 : Coach IA intelligent
+# ————————————————————————
+def coach_ia(heures, sommeil, stress):
+    score = heures * 3 + sommeil * 4
+    if stress == "non": score += 15
+    elif stress == "un peu": score += 5
+
+    if score >= 80:
+        return "TU VAS TOUT DÉCHIRER !"
+    elif score >= 60:
+        return "Très bien, continue comme ça"
+    else:
+        return "Plan d’urgence : +2h révision aujourd’hui"
+
+print("\n4. COACH IA")
+print(coach_ia(7, 8, "non"))
+
+# ————————————————————————
+# FONCTION 5 : Ton futur (prédiction personnalisée)
+# ————————————————————————
+def futur_dev(heure_par_jour):
+    jours = 180  # 6 mois
+    total_heures = heure_par_jour * jours
+    if total_heures >= 1000:
+        return "TU SERAS UN VRAI DÉVELOPPEUR IA EN GUINÉE"
+    elif total_heures >= 600:
+        return "Tu seras junior pro – stage garanti"
+    else:
+        return "Continue, tu es sur la bonne voie"
+
+print(f"\n5. TON FUTUR → {futur_dev(5)}")
